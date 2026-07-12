@@ -1,70 +1,62 @@
 # Search Queries for Job Scraper
 
-<!-- SETUP: Customize these queries based on your skills, target roles, and location -->
-
 ## Search Sites
 
-Primary (Danish job market):
-- **jobindex.dk** - largest Danish job board
-- **linkedin.com/jobs** - LinkedIn job listings (filter: Denmark / your city)
-- **karriere.dk** - IDA's job board (engineering/science roles)
-- **jobfinder.dk** - another major Danish job board
-- **akademikernes.dk** - academic union job board
+This candidate is based in the United States, so the framework's built-in Danish job-portal tools (Jobindex, Jobbank, Jobdanmark, Jobnet) do not apply. Rely on:
+
+Primary:
+- **linkedin.com/jobs** - LinkedIn job listings (filter: United States, remote, or specific state)
+- Google `site:` searches against LinkedIn and company career pages
 
 Secondary (company career pages via Google):
 - Direct Google searches with `site:` filters for known target companies
 
 ## Query Categories
 
-Queries are grouped by priority. Each query should be combined with your location terms (e.g. "Copenhagen", "Sjælland", "Hovedstaden") where the site supports it.
+Queries are grouped by priority. The candidate is open to any US location, remote, hybrid, or on-site, so location terms are optional filters rather than hard constraints.
 
-### Priority 1: [YOUR_PRIMARY_ROLE_TYPE]
+### Priority 1: Software Engineer / Full-Stack
 
-These match your strongest and most desired career direction.
-
-```
-site:jobindex.dk "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_CITY]
-site:jobindex.dk "[YOUR_KEY_SKILL]" [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_COUNTRY]
-```
-
-### Priority 2: [YOUR_DOMAIN_EXPERTISE]
-
-These match your domain expertise.
+Strongest and most desired career direction (early-career, full-time or internship).
 
 ```
-site:jobindex.dk [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] OR [YOUR_REGION]
-site:jobindex.dk [YOUR_DOMAIN_KEYWORD_2] [YOUR_COUNTRY]
-site:linkedin.com/jobs [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] [YOUR_COUNTRY]
+site:linkedin.com/jobs "Software Engineer" "entry level" OR "new grad" OR intern
+site:linkedin.com/jobs "Full Stack Engineer" "entry level" OR "new grad" OR intern
+site:linkedin.com/jobs "Full Stack Developer" TypeScript React
+"software engineer intern" 2026 OR 2027
 ```
 
-### Priority 3: [YOUR_ADJACENT_ROLE_TYPE]
+### Priority 2: Front-End / Back-End
 
-Adjacent roles you could pivot into.
-
-```
-site:jobindex.dk "[YOUR_ADJACENT_TITLE_1]" [YOUR_KEY_SKILL] [YOUR_CITY]
-site:jobindex.dk "[YOUR_ADJACENT_TITLE_2]" [YOUR_KEY_SKILL] [YOUR_CITY]
-```
-
-### Priority 4: Broader Technical / Consulting
-
-Wider net for general technical roles.
+Matches specific stack expertise (React/Next.js frontend, Java/SQL backend).
 
 ```
-site:jobindex.dk [YOUR_KEY_SKILL] developer [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_KEY_SKILL] developer" [YOUR_CITY]
-site:jobindex.dk "technical consultant" [YOUR_DOMAIN] [YOUR_CITY]
+site:linkedin.com/jobs "Front End Engineer" React OR Next.js "entry level" OR intern
+site:linkedin.com/jobs "Back End Engineer" Java OR SQL "entry level" OR intern
+site:linkedin.com/jobs "Frontend Developer" TypeScript entry level
+```
+
+### Priority 3: Systems Engineer
+
+Adjacent role type matching C/C++ and systems programming background.
+
+```
+site:linkedin.com/jobs "Systems Engineer" C++ "entry level" OR "new grad"
+site:linkedin.com/jobs "Software Engineer" C++ systems intern OR "new grad"
+```
+
+### Priority 4: Broader Technical
+
+Wider net for general early-career technical roles.
+
+```
+site:linkedin.com/jobs "new grad" software engineer 2026 OR 2027
+site:linkedin.com/jobs "software developer" intern remote
 ```
 
 ## Location Filter
 
-When evaluating results, verify the job location is within reasonable commute distance from your home. Define acceptable areas:
-- [YOUR_CITY] and surrounding areas
-- [ACCEPTABLE_AREA_1]
-- [ACCEPTABLE_AREA_2]
-- [BORDERLINE_AREA] (borderline - ~X min by transit)
-- [TOO_FAR_AREA] (too far)
+The candidate is open to relocating anywhere in the United States and is open to remote, hybrid, or on-site roles. There is no commute range or relocation constraint - do not filter out results by location. Optionally note whether a role is remote, hybrid, or requires on-site presence in a specific city, but do not treat any US location as disqualifying.
 
 ## Date Filter
 
