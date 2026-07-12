@@ -68,7 +68,8 @@ Also read the most recent existing CV and cover letter files for concrete struct
 - Follow the moderncv/banking format from `05-cv-templates.md`
 - Tailor the profile statement and experience bullets to the specific role
 - Reframe skills and achievements to match job requirements
-- Keep to 2 pages
+- **Hard 1-page limit** (see `05-cv-templates.md` Page Budget) - no Languages, Honors and Awards, or References sections; honors fold into the Education entry
+- **Cross-check every copied fact against `01-candidate-profile.md`.** An existing CV read as a structural reference in this step may predate a profile correction (e.g. a role once misdescribed, a section format since deprecated) - never carry a bullet or section forward without verifying it still matches the current profile
 
 ### Cover Letter (`cover_letters/cover_<company>_<role>.tex`)
 - **Match the language of the job posting** (Danish posting -> Danish cover letter, English posting -> English cover letter)
@@ -196,9 +197,8 @@ If either compile fails, fix the error and re-compile until clean.
 Read both PDFs via the Read tool and verify:
 
 **CV (`cv/main_<company>.pdf`):**
-- [ ] Exactly 2 pages (not 1, not 3)
-- [ ] No orphaned `\cventry` titles — a job/education title line must never sit alone at the bottom of page 1 with its bullets on page 2. This is the most common failure.
-- [ ] Section headings are not isolated at the top of page 2 with only 1-2 lines below
+- [ ] Exactly 1 page (not 2)
+- [ ] No orphaned `\cventry` titles — a job/education title line must never sit alone at the bottom of the page with its bullets spilling to a second page. This is the most common failure.
 - [ ] No awkward whitespace gaps
 
 **Cover letter (`cover_letters/cover_<company>_<role>.pdf`):**
@@ -211,16 +211,16 @@ Read both PDFs via the Read tool and verify:
 If the layout has problems, edit the `.tex` files and recompile. Common fixes (see `05-cv-templates.md` and `06-cover-letter-templates.md` for full details):
 
 - **Orphaned CV entry title:** `\usepackage{needspace}` in preamble, then `\needspace{5\baselineskip}` immediately before the problematic `\cventry`
-- **CV spills to page 3 with only a trailing section:** `\enlargethispage{2-3\baselineskip}` before a late section
-- **Substantial content on page 3:** cut content using **relevance-weighted cutting** (see `05-cv-templates.md` → "Relevance-weighted cutting"). Score each candidate line by (a) relevance to THIS posting's keywords and responsibilities, (b) uniqueness (is it duplicated elsewhere?), (c) narrative load (does the cover letter depend on it?). Cut the lowest-total-score line first, regardless of section. Do NOT mechanically apply a static section-based priority order — an older-role bullet that hits posting keywords is worth more than a recent-role bullet that does not.
+- **CV spills to page 2 by a near-miss (1.02 pages):** `\enlargethispage{3\baselineskip}` before a late section (a single value - `\enlargethispage{2-3\baselineskip}` is invalid LaTeX and silently renders a stray "-3" on the page). If it has no visible effect on recompile, the spill isn't actually marginal - cut content instead
+- **CV spills to a full second page of content:** cut content using **relevance-weighted cutting** (see `05-cv-templates.md` → "Relevance-weighted cutting"). Score each candidate line by (a) relevance to THIS posting's keywords and responsibilities, (b) uniqueness (is it duplicated elsewhere?), (c) narrative load (does the cover letter depend on it?). Cut the lowest-total-score line first, regardless of section. Do NOT mechanically apply a static section-based priority order — an older-role bullet that hits posting keywords is worth more than a recent-role bullet that does not.
 - **Cover letter itemize breaks compile or uses wrong font:** close `\lettercontent{}` before the list, wrap the list in `{\raggedright\fontspec[Path = OpenFonts/fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont \begin{itemize}...\end{itemize}\par}`
 - **Cover letter spills to 2 pages:** trim using the same relevance-weighted logic. First cut: sentences that restate what a bullet already said. Second cut: a bullet that does not hit posting keywords. Last resort: a bullet that does hit posting keywords. Never reduce geometry or line spacing.
 
 Do not proceed to Step 6 until both PDFs pass inspection.
 
-### 5d. ATS & keyword verification (CV)
+### 5d. ATS & keyword verification (CV + cover letter)
 
-An ATS parser reads the PDF's embedded **text layer**, not the rendered page — a CV that passed visual inspection can still extract as garbage (icon glyphs where the contact details should be, scrambled reading order in multi-column layouts). This step verifies what a parser actually sees. It applies to the **CV only**; cover letters rarely go through keyword screening.
+An ATS parser reads the PDF's embedded **text layer**, not the rendered page — a document that passed visual inspection can still extract as garbage (icon glyphs where the contact details should be, scrambled reading order in multi-column layouts, unmapped custom fonts). This step verifies what a parser actually sees. The CV gets the full check below, including keyword coverage. The cover letter rarely goes through keyword screening, but still gets the lightweight parseability check in item 4 below — `cover.cls` uses far more custom `fontspec` font-loading than the CV's stock moderncv template, so it has more surface area for a font/Unicode-mapping regression to slip in silently.
 
 **Availability check:** run `pdftotext -v`. `pdftotext` (poppler) is an optional dependency, not part of TeX distributions. If it is missing, print a one-line warning that the mechanical parse check is skipped, do the keyword-coverage check (item 3 below) against your visual Read of the PDF instead, and note the degraded mode in the Step 6 report. Same graceful-skip pattern as the salary lookup.
 
@@ -252,7 +252,20 @@ Failures here are template-level problems: fix them in the `.tex` (e.g. print th
 - **missing (have it)** — the profile shows the candidate genuinely has this skill but the CV never says it: add it where it fits naturally, preferring experience bullets (concrete evidence) over the profile statement, then re-run 5a–5c.
 - **missing (gap)** — a genuine gap: leave it missing. **Never stuff keywords.** This is the same honesty rule the reviewer follows — a gap gets acknowledged in the cover letter's framing, not hidden in the CV.
 
-**4. Clean up:** delete the extracted `.txt` file.
+**4. Cover letter parseability check (lightweight):**
+
+```bash
+cd cover_letters && pdftotext -layout cover_<company>_<role>.pdf cover_<company>_<role>.txt
+```
+
+Read the `.txt` file and check:
+- [ ] No `(cid:NNN)` markers or `�` replacement characters (a legitimate separator dot `·` between the header's contact fields is expected and fine — that is not a mapping failure)
+- [ ] Email and phone number from `\namesection{}` appear as literal text
+- [ ] No stretches of body text visible in the PDF but missing from the extraction
+
+No keyword-coverage check is needed here — that is the CV's job. If this fails, it is a `cover.cls` font-mapping problem, not a content problem; flag it prominently rather than trying to work around it in the `.tex`.
+
+**5. Clean up:** delete both extracted `.txt` files.
 
 ### 5e. Clean up build artifacts
 
