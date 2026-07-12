@@ -1,8 +1,7 @@
-%% Example CV - [YOUR_NAME]
+%% Example CV - Purab Saini
 %% Comprehensive overview of all competencies, experience, and achievements.
 %% Use as a master reference when tailoring role-specific CVs.
 %%
-%% SETUP: Run /setup to populate this with your actual information.
 %% Compile with: lualatex main_example.tex
 %% (pdflatex often fails on modern MiKTeX with fontawesome5 font-expansion errors.)
 
@@ -24,47 +23,46 @@
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={Purab Saini - CV},
     pdfpagemode=FullScreen,
 }
 \usepackage[scale=0.80]{geometry}
 \usepackage{import}
 
 % personal data
-\name{[First]}{[Last]}
-\address{[Your Address, City, Country]}{}{}
-\phone[mobile]{[+XX XXXXXXXXXX]}
-\email{[your.email@example.com]}
-\extrainfo{\href{[https://linkedin.com/in/your-profile]}{LinkedIn}, \href{[https://github.com/your-username]}{GitHub}}
+\name{Purab}{Saini}
+\address{Seattle, WA, USA}{}{}
+\phone[mobile]{253-293-1022}
+\email{purabsaini8@gmail.com}
+\extrainfo{\href{https://linkedin.com/in/purabsaini}{LinkedIn}, \href{https://github.com/PurabSaini}{GitHub}}
 
 \begin{document}
 
 \makecvtitle
 
+% No profile statement / summary section (2026-07-11 preference) - go straight
+% into content so the space goes to Projects and Professional Experience.
+
+% Standing section order (2026-07-11 preference): Education, Experience,
+% Projects, Technical Skills, Leadership (optional).
+
 % ============================================================
-%     PROFILE STATEMENT
+%     EDUCATION
 % ============================================================
 
-\vspace{6pt}
-\small{[Write a 3-5 line profile statement tailored to the role you're applying for. Focus on what makes you uniquely qualified. Example: "Data scientist with a PhD in [field] and X years of industry experience. Combines deep domain expertise in [domain] with strong applied machine learning and Python development skills. Experienced in developing end-to-end ML pipelines, from data ingestion to stakeholder-facing dashboards."]}
-
-% ============================================================
-%     CORE COMPETENCIES
-% ============================================================
-
-\section{Core Competencies}
+\section{Education}
 \vspace{1pt}
 \begin{itemize}
 
-\item \textbf{[Skill Category 1]}: [Specific skills, frameworks, tools. Be concrete.]
+\item{\cventry{2026--2028}{MS in Computer Science}{Georgia Institute of Technology}{Atlanta, GA}{}{\vspace{1pt}
+Expected May 2028.
+}}
 
-\item \textbf{[Skill Category 2]}: [Specific skills, frameworks, tools.]
+\vspace{3pt}
 
-\item \textbf{[Skill Category 3]}: [Specific skills, frameworks, tools.]
-
-\item \textbf{[Skill Category 4]}: [Domain expertise, methods, approaches.]
-
-\item \textbf{[Skill Category 5]}: [Tools, platforms, software.]
+\item{\cventry{2022--2025}{BS in Computer Science}{University of Washington}{Seattle, WA}{}{\vspace{1pt}
+GPA: 3.77/4.0; Annual Dean's List (2 years), Quarterly Dean's List (8 quarters). Coursework: Software Design \& Implementation, Data Management, Distributed Systems, Systems Programming.
+}}
 
 \end{itemize}
 
@@ -77,93 +75,91 @@
 \begin{itemize}
 
 % --- Most Recent Role ---
-\item{\cventry{[YYYY--Present]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\item{\cventry{2026--Present}{Volunteer Software Developer}{Sansar (VR Platform)}{Remote}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1 - be specific, use numbers where possible]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
-    \item [Achievement or responsibility 4]
+    \item Debugged and resolved \textbf{2 C++ engine issues} in a 90GB+ production codebase, including cursor disappearance during teleportation and unexpected hover text in cinematic camera mode
+    \item Landed 2 pull requests merged into production, reviewed by core maintainers
+    \item Built a C\#/XAML sound notification feature alerting players to received direct messages, based on player feedback
+    \item Developing a real-time speech-to-text feature using the Deepgram API for live audio transcription
 \end{itemize}}}
 
 \vspace{3pt}
 
 % --- Previous Role ---
-\item{\cventry{[YYYY--YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\item{\cventry{2025}{Data Infrastructure \& Curation Intern}{Trialynx}{Remote}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
-\end{itemize}}}
-
-\vspace{3pt}
-
-% --- Earlier Role ---
-\item{\cventry{[YYYY--YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
-\begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
+    \item Delivered \textbf{30+ merged pull requests} across a shared React/Next.js/Zustand codebase, resolving 10+ frontend bugs
+    \item Built UI integrations including AI-driven recommendation features surfacing clinical trial data to users
+    \item Engineered a multi-drug input and management workflow using TypeScript, expanding scope of clinical trial evaluation
+    \item Built an interactive ICD-10 disease hierarchy using Claude Code, improving navigation of AI-generated recommendations
 \end{itemize}}}
 
 \end{itemize}
 
 % ============================================================
-%     EDUCATION
+%     PROJECTS
 % ============================================================
 
-\section{Education}
+\section{Projects}
 \vspace{1pt}
 \begin{itemize}
 
-\item{\cventry{[YYYY--YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-Thesis: ``[Thesis Title].'' [Brief description of research focus.]
-}}
+\item{\cventry{}{Mini Google}{Course Project -- Systems Search Engine (C/C++, POSIX System Calls, Socket Programming)}{}{}{\vspace{1pt}
+\begin{itemize}
+    \item Built a search engine end-to-end covering data structures, file/disk indexing, and a socket-based web server
+    \item Indexed and processed 1,000+ files using custom data structures (hash tables, linked lists) and POSIX file I/O and process management
+    \item Handled client queries via socket-based client-server communication
+\end{itemize}}}
 
 \vspace{3pt}
 
-\item{\cventry{[YYYY--YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-[Brief description or key topics.]
-}}
+\item{\cventry{}{Flight Application}{Course Project -- Concurrent Database-Backed System (Java, SQL Server)}{}{}{\vspace{1pt}
+\begin{itemize}
+    \item Designed a relational database schema across 6 tables to manage airline flights, carriers, reservations, and customer data
+    \item Built a Java CLI with a SQL backend, validated for correctness under parallel and serial execution with unit and integration tests
+    \item Implemented secure password utilities using salted hashes and cryptographically secure random number generation
+\end{itemize}}}
 
 \end{itemize}
 
 % ============================================================
-%     LANGUAGES
+%     TECHNICAL SKILLS
 % ============================================================
 
-\section{Languages}
+\section{Technical Skills}
 \vspace{1pt}
 \begin{itemize}
-\item [Language 1] (native), [Language 2] (fluent), [Language 3] (intermediate).
+
+\item \textbf{Languages}: TypeScript, JavaScript, Java, C/C++, C\#, Python, SQL
+
+\item \textbf{Frameworks}: React, Next.js, Node.js, Express.js
+
+\item \textbf{Systems Programming}: POSIX system calls, socket programming, file/disk indexing, concurrency
+
+\item \textbf{Databases}: SQL Server, relational schema design
+
+\item \textbf{Tools}: Claude Code, Git, Linux, Visual Studio, VS Code, IntelliJ
+
+\item \textbf{Certifications}: CodePath Intermediate Technical Interview Prep (2025)
+
 \end{itemize}
 
 % ============================================================
-%     PUBLICATIONS (optional)
+%     LEADERSHIP (optional - only include on a tailored CV if
+%     page budget allows or the posting values mentorship/
+%     communication; see 05-cv-templates.md)
 % ============================================================
 
-\section{Publications}
+\section{Leadership}
 \vspace{1pt}
 \begin{itemize}
-\item [Author(s)] ([Year]). [Title]. [Journal/Conference]. \href{[DOI_URL]}{DOI link}
-\end{itemize}
 
-% ============================================================
-%     HONORS AND AWARDS (optional)
-% ============================================================
-
-\section{Honors and Awards}
-\vspace{1pt}
+\item{\cventry{2024--2026}{WSOS Scholar Lead}{Washington State Opportunity Scholarship}{Remote}{}{\vspace{1pt}
 \begin{itemize}
-\item{\textbf{[Award Name]} -- [Event/Organization] ([Year]).}
-\end{itemize}
+    \item Mentored \textbf{30+ STEM students} across multiple cohorts, offering peer advice and scholarship guidance to support academic and professional growth
+    \item Communicates scholarship deadlines, renewal requirements, and quarterly event information via email and virtual outreach
+\end{itemize}}}
 
-% ============================================================
-%     REFERENCES
-% ============================================================
-
-\section{References}
-\vspace{1pt}
-\begin{itemize}
-\item{Available upon request.}
 \end{itemize}
 
 \end{document}
