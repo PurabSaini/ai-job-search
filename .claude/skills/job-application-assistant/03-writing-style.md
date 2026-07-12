@@ -4,7 +4,7 @@
 
 1. **NO em-dashes (--).**  Use commas, periods, or restructure the sentence instead.
 2. **NO cliches or filler phrases.** Cut: "I am passionate about", "I believe I would be a great fit", "leverage my skills", "hit the ground running", "drive results", "synergies".
-3. **NO generic buzzwords** without concrete backing. Every claim must be supported by a specific example or fact.
+3. **NO generic buzzwords** without concrete backing. Every claim must be supported by a specific example or fact. This includes soft self-assessment claims that sound concrete but aren't tied to anything checkable - e.g. "Ships fixes independently once a problem is reported, without needing a detailed spec" is a buzzword in disguise unless it's anchored to a specific instance elsewhere in the document (a named bug, a named PR). Either attach the specific example or cut the sentence.
 4. **NO apologetic or overly humble language.** Not "I think I could contribute" but "I bring X, demonstrated by Y."
 5. **NO unverified company claims.** Every company-specific statement in a cover letter (partnerships, product names, technology descriptions, expansions) must be independently verified via WebFetch or WebSearch before inclusion. Do not trust reviewer agent research at face value. If a claim cannot be verified, rephrase it in general terms or omit it.
 6. **Reframe emphasis, not substance.** Some framing of experience toward the target role is expected. But apply the **interview backtrack test**: could the candidate comfortably explain this bullet in an interview without backtracking? If they'd have to say "well, what I actually meant was..." then it's too far. Specifically:
@@ -80,6 +80,7 @@ The cover letter is **not a CV repetition**. It should be forward-looking:
 - Start with action verb or bold category label
 - Be specific: numbers, tools, outcomes
 - Vary the structure (not every bullet starts the same way)
+- Keep tense consistent within a role/section: past tense for finished work, present tense only for what's genuinely still in progress. Don't let a bullet stay in present tense after the work has shipped - re-check tense whenever reusing a bullet across applications.
 
 ## Language for Different Role Types
 
@@ -104,3 +105,7 @@ The cover letter is **not a CV repetition**. It should be forward-looking:
 - Default to the language of the job posting
 - Cover letters in the posting's language should feel natural, not translated
 - Slightly warmer, more personal tone may be acceptable in some languages
+
+## Patterns Observed in Past Applications
+
+No submitted cover letters have been mined for recurring patterns yet - `/setup` populates this section from `documents/applications/<company>_<role>/cover_letter.tex` files once 2+ letters show a genuine structural pattern. Nothing to report until then.
