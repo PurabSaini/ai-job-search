@@ -26,9 +26,10 @@ When the user provides a job posting (URL or text), follow this workflow:
 
 ### Step 2: Tailor CV
 - Read the most relevant existing CV variant from `cv/` as a starting point
+- **Cross-check every copied fact against `01-candidate-profile.md`.** An existing CV read for structural reference may predate a profile correction (a misdescribed role, a since-deprecated section format) - never carry a bullet or section forward without verifying it still matches the current profile
 - Follow the guidelines in `05-cv-templates.md`
 - Create `cv/main_<company>.tex` with tailored content
-- Adjust: profile statement, skills section, experience bullet emphasis, section order
+- Adjust: skills section, experience bullet emphasis, project selection (no profile statement/summary - see `05-cv-templates.md`)
 
 ### Step 3: Write Cover Letter
 - Follow the writing style rules in `03-writing-style.md` (critical: no em-dashes, no cliches)
