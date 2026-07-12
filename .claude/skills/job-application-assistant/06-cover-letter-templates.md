@@ -84,15 +84,17 @@ The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\l
 
 \lettercontent{[Opening paragraph - role, connection to background, 2-3 sentences]}
 
-\lettercontent{[Body paragraph - most relevant experience, then bullet list]
+\lettercontent{[Body paragraph - most relevant experience, framed toward the tasks in the posting:]}
 
+{\raggedright\fontspec[Path = OpenFonts/fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont
 \begin{itemize}
-    \item [Concrete achievement/skill 1]
-    \item [Concrete achievement/skill 2]
-    \item [Concrete achievement/skill 3]
-\end{itemize}
+    \item \textbf{[Achievement 1]:} [concrete result with a number where possible]
+    \item \textbf{[Achievement 2]:} [skill or project mapped to a posting requirement]
+    \item \textbf{[Achievement 3]:} [evidence for a nice-to-have requirement]
+\end{itemize}\par}
+\vspace{6pt}
 
-[Connection to company - why this role, why this company specifically]}
+\lettercontent{[Connection to company - why this role, why this company specifically, referencing a verified specific: a product, a stated priority, a team]}
 
 \lettercontent{[Personal fit paragraph - behavioral strengths, team contribution, 2-3 sentences]}
 
@@ -107,6 +109,16 @@ The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\l
 \end{flushright}
 \end{document}
 ```
+
+## ATS Parseability (Lightweight Check)
+
+Cover letters rarely go through keyword screening the way a CV does, but `cover.cls` loads far more custom `fontspec` fonts per macro than the CV's stock moderncv template - more surface area for a font/Unicode-mapping regression to slip in silently. After the compile-and-inspect loop passes, run the same extraction check used for the CV (see `05-cv-templates.md` → "ATS Parseability"):
+
+```bash
+cd cover_letters && pdftotext -layout cover_<company>_<role>.pdf cover_<company>_<role>.txt
+```
+
+Check: no `(cid:NNN)` markers or `�` replacement characters (the header's contact-field separator legitimately extracts as a middle dot `·` - that's not a failure), and the email/phone from `\namesection{}` appear as literal text. No keyword-coverage check is needed here. If it fails, it's a `cover.cls` problem, not a content problem - flag it rather than working around it in the `.tex`. Delete the `.txt` file afterward.
 
 ## Key Commands Reference
 
