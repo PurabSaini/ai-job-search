@@ -1,39 +1,62 @@
 # Interview Preparation Guide
 
-<!-- SETUP: STAR examples are personalized by running /setup based on your actual experience -->
-
 ## STAR Format
 
 Structure answers as: **Situation** (context), **Task** (your responsibility), **Action** (what you did), **Result** (outcome).
 
 Keep answers to 1-2 minutes. Be specific. End with what you learned or would do differently.
 
-## Ready-Made STAR Examples
+## STAR Candidates (Complete Manually)
 
-<!-- These are populated by /setup from your actual experience. Below are templates showing the format. -->
+### Debugging C++ engine issues in a 90GB+ production codebase (Sansar)
+**Source:** CV / LinkedIn - Volunteer Software Developer, Sansar
+**What happened:** Debugged and resolved 2 C++ engine issues (cursor disappearance during teleportation, unexpected hover text in cinematic camera mode) in a large production VR codebase, with 2 PRs merged after core maintainer review.
+**Why it matters:** Answers questions about debugging unfamiliar/large codebases, working with open-source maintainers, systems-level troubleshooting.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
 
-### 1. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT - what was happening, what was the problem]
-**T:** [YOUR RESPONSIBILITY - what you specifically needed to do]
-**A:** [WHAT YOU DID - specific actions, tools, methods]
-**R:** [OUTCOME - measurable results, adoption, impact]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### High-volume PR delivery across a shared frontend codebase (Trialynx)
+**Source:** CV / LinkedIn - Data Infrastructure & Curation Intern, Trialynx
+**What happened:** Delivered 30+ merged pull requests across a shared React/Next.js/Zustand codebase, resolving 10+ frontend bugs, while also building new features (multi-drug workflow, ICD-10 disease hierarchy) using Claude Code.
+**Why it matters:** Answers questions about working in a shared/team codebase, velocity, collaborating via code review, using AI coding tools effectively.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
 
-### 2. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT]
-**T:** [YOUR RESPONSIBILITY]
-**A:** [WHAT YOU DID]
-**R:** [OUTCOME]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### Building a search engine from scratch (Mini Google project)
+**Source:** CV - Projects
+**What happened:** Built a search engine end-to-end in C/C++ covering custom data structures, file/disk indexing, and a socket-based web server, indexing 1,000+ files.
+**Why it matters:** Answers questions about systems programming fundamentals, working "below the abstraction layer," independent project scoping.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
 
-### 3. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT]
-**T:** [YOUR RESPONSIBILITY]
-**A:** [WHAT YOU DID]
-**R:** [OUTCOME]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### Designing a concurrent database-backed flight reservation system
+**Source:** CV - Projects (Flight Application)
+**What happened:** Designed a 6-table relational schema and built a Java CLI with a SQL backend supporting concurrent (parallel and serial) transaction consistency, plus secure password handling with salted hashes.
+**Why it matters:** Answers questions about database design, concurrency, security fundamentals.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
 
-<!-- Add more STAR examples as needed. Aim for 4-6 covering different competencies. -->
+### Mentoring 30+ STEM students (WSOS Scholar Lead)
+**Source:** CV / LinkedIn - WSOS Scholar Lead
+**What happened:** Mentored 30+ STEM students across multiple cohorts, providing peer advice and scholarship guidance, and communicating deadlines/requirements via email and virtual outreach.
+**Why it matters:** Answers questions about mentorship, leadership without authority, communication at scale.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
 
 ## Common Tough Questions
 
