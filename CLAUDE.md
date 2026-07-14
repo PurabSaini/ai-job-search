@@ -48,7 +48,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - **Software:** Claude Code, Git, Linux, Visual Studio, VS Code, IntelliJ
 
 ### Certifications
-- **CodePath Intermediate Technical Interview Prep** - completed Aug 2025
+- **CodePath Intermediate Technical Interview Prep** - June 2025 - August 2025
 
 ### Publications
 None yet.
@@ -63,13 +63,14 @@ Inferred from LinkedIn self-description and project history, not a formal assess
 - **Thrives in:** Building things that are technically solid and genuinely useful to people (per LinkedIn self-description)
 
 ### What Excites You
-Not yet specified - ask Purab directly rather than inferring from the profile above if an application decision needs this.
+- **Full-stack range:** Spanning systems/backend and UI work rather than narrow specialization (matches LinkedIn self-description and Sansar/Trialynx experience side by side)
+- **AI/agentic tooling:** Building with or on top of LLM/agentic tools (Claude Code, agent frameworks) as a core part of the work, not just a side habit
+
+### Deal-breakers
+- None specified - staying open broadly (confirmed 2026-07-13); no hard salary floor set either, evaluate on skills/experience/culture fit
 
 ### Target Sectors
 - Looking broadly for early-career Software Engineer / Full-Stack / Front-End / Back-End / Systems roles, full-time or internship, anywhere in the US
-
-### Deal-breakers
-- None specified
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)
