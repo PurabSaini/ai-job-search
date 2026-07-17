@@ -9,7 +9,7 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 ## STAR Candidates (Complete Manually)
 
 ### Debugging C++ engine issues in a 90GB+ production codebase (Sansar)
-**Source:** CV / LinkedIn - Volunteer Software Developer, Sansar
+**Source:** CV / LinkedIn - Software Developer, Sansar
 **What happened:** Debugged and resolved 2 C++ engine issues (cursor disappearance during teleportation, unexpected hover text in cinematic camera mode) in a large production VR codebase, with 2 PRs merged after core maintainer review.
 **Why it matters:** Answers questions about debugging unfamiliar/large codebases, working with open-source maintainers, systems-level troubleshooting.
 **S/T/A/R stub:**
