@@ -15,13 +15,13 @@
 
 | Degree | Period | Institution | Key Topics |
 |--------|--------|-------------|------------|
-| MS, Computer Science | Expected May 2028 | Georgia Institute of Technology, Atlanta, GA | [PROGRAM_FOCUS - TBD once coursework begins] |
+| MS, Computer Science | Sep 2026 - Expected May 2028 | Georgia Institute of Technology, Atlanta, GA | [PROGRAM_FOCUS - TBD once coursework begins] |
 | BS, Computer Science | Sept 2022 - Jun 2025 | University of Washington, Seattle, WA | Software Design & Implementation, Data Management, Distributed Systems, Systems Programming. Cumulative GPA 3.77/4.0; Annual Dean's List (2 years), Quarterly Dean's List (8 quarters) |
 | AA | Sept 2020 - Jun 2022 | Tacoma Community College | [Inferred from LinkedIn - review before relying on this] |
 
 ## Professional Experience
 
-### Volunteer Software Developer - Sansar (VR Platform) (Jan 2026 - Present)
+### Software Developer - Sansar (VR Platform) (Jan 2026 - Present)
 Remote
 - Debugged and resolved 2 C++ engine issues in a 90GB+ production codebase, including cursor disappearance during teleportation and unexpected hover text in cinematic camera mode
 - Landed 2 pull requests merged into production, reviewed by core maintainers
@@ -54,7 +54,7 @@ Remote
 
 ## Coursework Projects
 *(Built as university course assignments, not self-initiated. Actions taken/skills demonstrated can be described factually, but do not frame these as independent/self-directed initiatives.)*
-- **Mini Google** (Systems Search Engine, C/C++/POSIX System Calls/Socket Programming/Git): Built a search engine end-to-end covering data structures, file/disk indexing, and a web server. Indexed and processed 1,000+ files using custom data structures (hash tables, linked lists). Implemented file I/O and process management using POSIX system calls. Handled client queries via socket-based client-server communication.
+- **Mini Google** (Systems Search Engine, C/C++/POSIX System Calls/Socket Programming/Git): Built a search engine end-to-end covering data structures, file/disk indexing, and a web server. Indexed and processed 1,000+ files using custom data structures (hash tables, linked lists). Implemented file I/O and process management using POSIX system calls. Server handled multi-word, case-insensitive search queries from clients via socket-based client-server communication, returning matching files sorted by total occurrence count of the query terms (confirmed 2026-07-13 with example CLI output - not boolean/phrase-operator queries, but genuinely multi-word and sorted by match count, reversing the 2026-07-12 single-word-only correction).
 - **Flight Application** (Concurrent Database-Backed System, Java/SQL/SQL Server/MS Azure): Designed a relational database schema across 6 tables to manage airline flights, carriers, reservations, and customer data. Wrote unit and integration tests validating correctness in parallel and serial execution modes. Built a CLI in Java with SQL backend supporting data consistency and concurrency. Implemented secure password utilities with salted hashes and cryptographically secure random number generation.
 
 ## Independent Projects
@@ -78,6 +78,9 @@ Remote
 - MS Azure: used once, for the Flight Application coursework project (SQL Server hosting) — not a general/ongoing tool, do not list as a standing skill
 - Scrapy: brief use, for the Pittsburgh Market project (Python web scraper for product data) — not a standing skill, do not list by default; mention only when a specific posting calls for scraping/data-pipeline experience
 - SSRS: not a skill Purab has hands-on experience with - he shadowed SSRS dashboard work at Peninsula Light Co. but did not build it himself. Do not list.
+
+## Certifications
+- **CodePath Intermediate Technical Interview Prep** - June 2025 - August 2025
 
 ## Publications
 None yet.
