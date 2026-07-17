@@ -1,5 +1,18 @@
 # CV Templates and Tailoring Guide
 
+<!-- BEGIN ACTIVE-TEMPLATE (managed by /add-template - do not edit by hand) -->
+> **Active template override: `purab-resume`**
+>
+> A custom template is active. Where this block conflicts with the stock guidance below, this block wins. Structural advice below (tailoring, page-budget, cutting rules) still applies.
+>
+> - **Template skeleton:** `templates/cv/purab-resume/template.tex` — use this as the structural reference instead of the stock moderncv template
+> - **Manifest:** `templates/cv/purab-resume/TEMPLATE.md` — read this for style rules and known pitfalls before drafting
+> - **Compile with:** `pdflatex` (not `lualatex` — this template has no fontawesome5/fontspec dependency)
+> - **Fonts:** Computer Modern, LaTeX default — no bundled fonts, no system font install needed. Uses `\input{glyphtounicode}` for ATS glyph mapping (see manifest Known pitfalls)
+> - **Page limit:** exactly 1 page (`main_example.tex` remains exempt as the master reference)
+> - **Output file:** unchanged (`cv/main_<company>.tex`) — no class/font files to copy, the template only needs standard TeX Live/MiKTeX packages
+<!-- END ACTIVE-TEMPLATE -->
+
 ## Template: LaTeX moderncv (Banking Style)
 
 All CVs use the moderncv LaTeX package with the "banking" style and "blue" color scheme.
@@ -26,8 +39,8 @@ Expected output: `Output written on main_<company>.pdf (1 page, ...)`. Any page 
 % Force both first and last name AND section headings to render in moderncv
 % blue (color1). Default banking on lualatex+MiKTeX leaves these black, which
 % looks inconsistent with the rest of the blue accent scheme.
-\renewcommand*{\firstnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
-\renewcommand*{\lastnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
+\renewcommand*{\firstnamestyle}[1]{{\fontsize{24}{26}\bfseries\upshape\color{color1}#1}}
+\renewcommand*{\lastnamestyle}[1]{{\fontsize{24}{26}\bfseries\upshape\color{color1}#1}}
 \renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
 
 \usepackage[utf8]{inputenc}
@@ -41,8 +54,12 @@ Expected output: `Output written on main_<company>.pdf (1 page, ...)`. Any page 
     pdftitle={[YOUR_NAME] - CV},
     pdfpagemode=FullScreen,
 }
-\usepackage[scale=0.80]{geometry}
+\usepackage[scale=0.91]{geometry}
 \usepackage{import}
+\usepackage{enumitem}
+\setlist[itemize,1]{itemsep=2pt, topsep=1pt, partopsep=0pt, parsep=0pt}
+\setlist[itemize,2]{itemsep=1pt, topsep=1pt, partopsep=0pt, parsep=0pt}
+\linespread{0.95}
 
 % Personal data
 \name{[FIRST_NAME]}{[LAST_NAME]}
@@ -74,6 +91,17 @@ Expected output: `Output written on main_<company>.pdf (1 page, ...)`. Any page 
 ### Color overrides
 
 The three `\renewcommand*` lines in the preamble are required on lualatex+MiKTeX. Without them the firstname, lastname, and section headings render in black even though `\moderncvcolor{blue}` is set, which looks inconsistent with the rest of the blue accent scheme (links, bullet markers, contact icons). The override forces all three to use `color1` (moderncv's accent colour, which becomes blue under `\moderncvcolor{blue}`). Both names render bold; if you prefer the firstname in regular weight, change the firstnamestyle override from `\bfseries` to `\mdseries`. Don't drop the override - on most modern installs the defaults render visibly wrong.
+
+### Space-efficient preamble (2026-07-11 density pass)
+
+The stock moderncv banking defaults (34pt name, `scale=0.80` geometry, default itemize spacing) are noticeably less dense than Purab's original plain-template resume, which fit *more* content (an extra role, an extra project, more skill categories) on a single page. To close that gap without cutting real content, the preamble now includes:
+
+- **Smaller name font**: `\fontsize{24}{26}` instead of `34/36` - the name block was the single biggest vertical space cost in the header.
+- **Wider usable page area**: `\usepackage[scale=0.91]{geometry}` instead of `0.80` - more text area per page, not tighter text.
+- **Tighter list spacing**: `\usepackage{enumitem}` with `\setlist[itemize,1]{...}` and `\setlist[itemize,2]{...}` reduce the default `itemsep`/`topsep` moderncv's banking style ships with, which otherwise adds visible gaps between Technical Skills bullets and between `\cventry` blocks.
+- **Slightly tighter line spacing**: `\linespread{0.95}`.
+
+This combination was validated against `cv/main_example.tex`'s full content (2 experience entries, 2 projects, 6 skills categories, 1 leadership entry - 14+ bullets total) fitting on exactly 1 page with no visible crowding. Apply this preamble to new `main_<company>.tex` files as the current baseline instead of the older, more spacious settings. See the `\enlargethispage` clipping warning above (under "Fixing common page-break problems") before pushing any of these values further to close a remaining near-miss.
 
 ### Spacing inside itemize lists (important)
 
@@ -136,8 +164,10 @@ List **5-7 key competencies** in bullet format, tailored to the specific job: `\
 - For senior roles, keep education brief (dates and titles only)
 - Include thesis topics when relevant to the target role
 - **Fold honors/awards into the relevant degree entry** (e.g. "GPA: 3.77/4.0; Annual Dean's List (2 years), Quarterly Dean's List (8 quarters)" as a line under the BS entry) rather than a standalone Honors and Awards section - default since 2026-07-09
+- **Dates include the month, not just the year** (2026-07-12 preference) - e.g. `Aug 2026--May 2028`, `Sep 2022--Jun 2025`, not `2026--2028`. Applies to every `\cventry` date field across Education, Professional Experience, and Leadership. Pull the month from `01-candidate-profile.md` (every entry there already has month-level dates); ask Purab rather than guessing if a date is genuinely unknown (e.g. an unconfirmed program start month) - see the GT MS entry there for the confirmed Aug 2026 start.
 
 ### Professional Experience
+- **Dates include the month, not just the year** - see the Education note above; same convention applies to every role entry.
 - Rewrite bullet points to emphasize aspects most relevant to the target role
 - Use 4-6 bullets for most recent role, 3-4 for previous, 2-3 for older
 - **Emphasize measurable results** where possible: "Reduced processing time by X%", "Model adopted by the team"
@@ -189,6 +219,8 @@ After writing the CV and before presenting to the user, always compile and visua
 
 **Problem: content spills to a second page by a near-miss (1.02 pages)**
 Add `\enlargethispage{3\baselineskip}` before the last section to reclaim a few lines (use a single value - `\enlargethispage{2-3\baselineskip}` is invalid LaTeX and silently renders a stray "-3" on the page instead of erroring). This is the standard LaTeX rescue for near-miss overflows - prefer this over cutting content for a marginal spill. If it has no visible effect after recompiling, the spill isn't actually marginal - move to a real content cut instead of increasing the value further.
+
+**Danger: `\enlargethispage` can silently clip content instead of moving it - page count alone is not proof of success.** Pushing the value too high doesn't make LaTeX flow the overflow onto a second page - it prints the excess *past the bottom of the physical page*, where it's invisible in the rendered PDF and can even disappear from `pdftotext` extraction entirely (confirmed by direct testing: a value that dropped the page count from 2 to 1 also silently deleted the CV's last two bullet points from the text layer). **Never trust "N pages" alone after using `\enlargethispage`.** After every recompile, grep the `pdftotext -layout` output for a handful of phrases spanning the whole document - especially the very last line of content - to confirm nothing vanished. If a phrase is missing, the value is too high; step back down one increment at a time and re-verify. This applies whenever tightening spacing to hit a page target, not just to `main_example.tex`.
 
 **Problem: 2 pages with substantial content on page 2**
 Cut content — do not compress geometry or `\vspace` to force-fit. See "Relevance-weighted cutting" below for the rule. On a 1-page CV this is the normal failure mode; expect to cut bullets, not just whitespace.
