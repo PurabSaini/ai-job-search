@@ -2,164 +2,194 @@
 %% Comprehensive overview of all competencies, experience, and achievements.
 %% Use as a master reference when tailoring role-specific CVs.
 %%
-%% Compile with: lualatex main_example.tex
-%% (pdflatex often fails on modern MiKTeX with fontawesome5 font-expansion errors.)
+%% Template: Jake's Resume (templates/cv/jakes-resume/) - registered via /add-template.
+%% Compile with: pdflatex main_example.tex
 
-\documentclass[11pt,a4paper,sans]{moderncv}
-\moderncvstyle{banking}
-\moderncvcolor{blue}
+\documentclass[letterpaper,11pt]{article}
 
-% Force both first and last name AND section headings to render in moderncv
-% blue (color1). Default banking on lualatex+MiKTeX leaves these black, which
-% looks inconsistent with the rest of the blue accent scheme.
-\renewcommand*{\firstnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
-\renewcommand*{\lastnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
-\renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
 
-\usepackage[utf8]{inputenc}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=blue,
-    pdftitle={Purab Saini - CV},
-    pdfpagemode=FullScreen,
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    #1 \vspace{-2pt}
+  }
 }
-\usepackage[scale=0.80]{geometry}
-\usepackage{import}
 
-% personal data
-\name{Purab}{Saini}
-\address{Seattle, WA, USA}{}{}
-\phone[mobile]{253-293-1022}
-\email{purabsaini8@gmail.com}
-\extrainfo{\href{https://linkedin.com/in/purabsaini}{LinkedIn}, \href{https://github.com/PurabSaini}{GitHub}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-\makecvtitle
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Purab Saini} \\ \vspace{1pt}
+    \small 253-293-1022 $|$ \href{mailto:purabsaini8@gmail.com}{\underline{purabsaini8@gmail.com}} $|$
+    \href{https://linkedin.com/in/purabsaini}{\underline{LinkedIn}} $|$
+    \href{https://github.com/PurabSaini}{\underline{GitHub}}
+\end{center}
 
-% No profile statement / summary section (2026-07-11 preference) - go straight
-% into content so the space goes to Projects and Professional Experience.
 
-% Standing section order (2026-07-11 preference): Education, Experience,
-% Projects, Technical Skills, Leadership (optional).
-
-% ============================================================
-%     EDUCATION
-% ============================================================
-
+%-----------EDUCATION-----------
 \section{Education}
-\vspace{1pt}
-\begin{itemize}
+  \resumeSubHeadingListStart
 
-\item{\cventry{2026--2028}{MS in Computer Science}{Georgia Institute of Technology}{Atlanta, GA}{}{\vspace{1pt}
-Expected May 2028.
-}}
+    \resumeSubheading
+      {Georgia Institute of Technology}{Atlanta, GA}
+      {MS in Computer Science}{Sep 2026 -- May 2028}
 
-\vspace{3pt}
+    \resumeSubheading
+      {University of Washington}{Seattle, WA}
+      {BS in Computer Science}{Sep 2022 -- Jun 2025}
+      \resumeItemListStart
+        \resumeItem{GPA: 3.77/4.0; Annual Dean's List (2 years), Quarterly Dean's List (8 quarters). Coursework: Software Design \& Implementation, Data Management, Distributed Systems, Systems Programming.}
+      \resumeItemListEnd
 
-\item{\cventry{2022--2025}{BS in Computer Science}{University of Washington}{Seattle, WA}{}{\vspace{1pt}
-GPA: 3.77/4.0; Annual Dean's List (2 years), Quarterly Dean's List (8 quarters). Coursework: Software Design \& Implementation, Data Management, Distributed Systems, Systems Programming.
-}}
+  \resumeSubHeadingListEnd
 
-\end{itemize}
 
-% ============================================================
-%     PROFESSIONAL EXPERIENCE
-% ============================================================
-
+%-----------PROFESSIONAL EXPERIENCE-----------
 \section{Professional Experience}
-\vspace{3pt}
-\begin{itemize}
+  \resumeSubHeadingListStart
 
-% --- Most Recent Role ---
-\item{\cventry{2026--Present}{Volunteer Software Developer}{Sansar (VR Platform)}{Remote}{}{\vspace{1pt}
-\begin{itemize}
-    \item Debugged and resolved \textbf{2 C++ engine issues} in a 90GB+ production codebase, including cursor disappearance during teleportation and unexpected hover text in cinematic camera mode
-    \item Landed 2 pull requests merged into production, reviewed by core maintainers
-    \item Built a C\#/XAML sound notification feature alerting players to received direct messages, based on player feedback
-    \item Developing a real-time speech-to-text feature using the Deepgram API for live audio transcription
-\end{itemize}}}
+    \resumeSubheading
+      {Software Developer}{Jan 2026 -- Present}
+      {Sansar (VR Platform)}{Remote}
+      \resumeItemListStart
+        \resumeItem{Debugged and resolved \textbf{2 C++ engine issues} in a 90GB+ production codebase, including cursor disappearance during teleportation and unexpected hover text in cinematic camera mode}
+        \resumeItem{Landed 2 pull requests merged into production, reviewed by core maintainers}
+        \resumeItem{Built a C\#/XAML sound notification feature alerting players to received direct messages, based on player feedback}
+        \resumeItem{Developing a real-time speech-to-text feature using the Deepgram API for live audio transcription}
+      \resumeItemListEnd
 
-\vspace{3pt}
+    \resumeSubheading
+      {Data Infrastructure \& Curation Intern}{Aug 2025 -- Nov 2025}
+      {Trialynx}{Remote}
+      \resumeItemListStart
+        \resumeItem{Delivered \textbf{30+ merged pull requests} across a shared React/Next.js/Zustand codebase, resolving 10+ frontend bugs}
+        \resumeItem{Built UI integrations including AI-driven recommendation features surfacing clinical trial data to users}
+        \resumeItem{Engineered a multi-drug input and management workflow using TypeScript, expanding scope of clinical trial evaluation}
+        \resumeItem{Built an interactive ICD-10 disease hierarchy using Claude Code, improving navigation of AI-generated recommendations}
+      \resumeItemListEnd
 
-% --- Previous Role ---
-\item{\cventry{2025}{Data Infrastructure \& Curation Intern}{Trialynx}{Remote}{}{\vspace{1pt}
-\begin{itemize}
-    \item Delivered \textbf{30+ merged pull requests} across a shared React/Next.js/Zustand codebase, resolving 10+ frontend bugs
-    \item Built UI integrations including AI-driven recommendation features surfacing clinical trial data to users
-    \item Engineered a multi-drug input and management workflow using TypeScript, expanding scope of clinical trial evaluation
-    \item Built an interactive ICD-10 disease hierarchy using Claude Code, improving navigation of AI-generated recommendations
-\end{itemize}}}
+  \resumeSubHeadingListEnd
 
-\end{itemize}
 
-% ============================================================
-%     PROJECTS
-% ============================================================
-
+%-----------PROJECTS-----------
 \section{Projects}
-\vspace{1pt}
-\begin{itemize}
+    \resumeSubHeadingListStart
 
-\item{\cventry{}{Mini Google}{Course Project -- Systems Search Engine (C/C++, POSIX System Calls, Socket Programming)}{}{}{\vspace{1pt}
-\begin{itemize}
-    \item Built a search engine end-to-end covering data structures, file/disk indexing, and a socket-based web server
-    \item Indexed and processed 1,000+ files using custom data structures (hash tables, linked lists) and POSIX file I/O and process management
-    \item Handled client queries via socket-based client-server communication
-\end{itemize}}}
+      \resumeProjectHeading
+          {\textbf{Mini Google} $|$ \emph{Course Project -- Systems Search Engine (C/C++, POSIX, Sockets)}}{}
+          \resumeItemListStart
+            \resumeItem{Built a search engine end-to-end covering data structures, file/disk indexing, and a socket-based web server}
+            \resumeItem{Indexed and processed 1,000+ files using custom data structures (hash tables, linked lists) and POSIX file I/O and process management}
+            \resumeItem{Served multi-word, case-insensitive search queries over socket-based client-server communication, returning matching files sorted by query-term match count}
+          \resumeItemListEnd
 
-\vspace{3pt}
+      \resumeProjectHeading
+          {\textbf{Flight Application} $|$ \emph{Course Project -- Concurrent Database-Backed System (Java, SQL Server)}}{}
+          \resumeItemListStart
+            \resumeItem{Designed a relational database schema across 6 tables to manage airline flights, carriers, reservations, and customer data}
+            \resumeItem{Built a Java CLI with a SQL backend, validated for correctness under parallel and serial execution with unit and integration tests}
+            \resumeItem{Implemented secure password utilities using salted hashes and cryptographically secure random number generation}
+          \resumeItemListEnd
 
-\item{\cventry{}{Flight Application}{Course Project -- Concurrent Database-Backed System (Java, SQL Server)}{}{}{\vspace{1pt}
-\begin{itemize}
-    \item Designed a relational database schema across 6 tables to manage airline flights, carriers, reservations, and customer data
-    \item Built a Java CLI with a SQL backend, validated for correctness under parallel and serial execution with unit and integration tests
-    \item Implemented secure password utilities using salted hashes and cryptographically secure random number generation
-\end{itemize}}}
+    \resumeSubHeadingListEnd
 
-\end{itemize}
 
-% ============================================================
-%     TECHNICAL SKILLS
-% ============================================================
-
+%-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
-\vspace{1pt}
-\begin{itemize}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: TypeScript, JavaScript, Java, C/C++, C\#, Python, SQL} \\
+     \textbf{Frameworks}{: React, Next.js, Node.js, Express.js} \\
+     \textbf{Systems Programming}{: POSIX system calls, socket programming, file/disk indexing, concurrency} \\
+     \textbf{Databases}{: SQL Server, relational schema design} \\
+     \textbf{Tools}{: Claude Code, Git, Linux, Visual Studio, VS Code, IntelliJ} \\
+     \textbf{Certifications}{: CodePath Intermediate Technical Interview Prep (2025)} \\
+    }}
+ \end{itemize}
 
-\item \textbf{Languages}: TypeScript, JavaScript, Java, C/C++, C\#, Python, SQL
 
-\item \textbf{Frameworks}: React, Next.js, Node.js, Express.js
-
-\item \textbf{Systems Programming}: POSIX system calls, socket programming, file/disk indexing, concurrency
-
-\item \textbf{Databases}: SQL Server, relational schema design
-
-\item \textbf{Tools}: Claude Code, Git, Linux, Visual Studio, VS Code, IntelliJ
-
-\item \textbf{Certifications}: CodePath Intermediate Technical Interview Prep (2025)
-
-\end{itemize}
-
-% ============================================================
-%     LEADERSHIP (optional - only include on a tailored CV if
-%     page budget allows or the posting values mentorship/
-%     communication; see 05-cv-templates.md)
-% ============================================================
-
+%-----------LEADERSHIP (optional - only include on a tailored CV if
+% page budget allows or the posting values mentorship/communication;
+% see 05-cv-templates.md)-----------
 \section{Leadership}
-\vspace{1pt}
-\begin{itemize}
+  \resumeSubHeadingListStart
 
-\item{\cventry{2024--2026}{WSOS Scholar Lead}{Washington State Opportunity Scholarship}{Remote}{}{\vspace{1pt}
-\begin{itemize}
-    \item Mentored \textbf{30+ STEM students} across multiple cohorts, offering peer advice and scholarship guidance to support academic and professional growth
-    \item Communicates scholarship deadlines, renewal requirements, and quarterly event information via email and virtual outreach
-\end{itemize}}}
+    \resumeSubheading
+      {WSOS Scholar Lead}{Aug 2024 -- Jun 2026}
+      {Washington State Opportunity Scholarship}{Remote}
+      \resumeItemListStart
+        \resumeItem{Mentored \textbf{30+ STEM students} across multiple cohorts, offering peer advice and scholarship guidance to support academic and professional growth}
+        \resumeItem{Communicates scholarship deadlines, renewal requirements, and quarterly event information via email and virtual outreach}
+      \resumeItemListEnd
 
-\end{itemize}
+  \resumeSubHeadingListEnd
 
+
+%-------------------------------------------
 \end{document}
