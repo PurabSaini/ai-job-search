@@ -25,7 +25,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - **AA** (2020-2022) - Tacoma Community College
 
 ### Professional Experience
-- **Volunteer Software Developer** (Jan 2026 - Present) - **Sansar (VR Platform)** (Remote)
+- **Software Developer** (Jan 2026 - Present) - **Sansar (VR Platform)** (Remote)
   - Debugged and resolved 2 C++ engine issues in a 90GB+ production codebase
   - Landed 2 pull requests merged into production, reviewed by core maintainers
   - Building a real-time speech-to-text feature using the Deepgram API
