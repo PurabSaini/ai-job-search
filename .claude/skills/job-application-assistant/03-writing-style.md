@@ -108,4 +108,8 @@ The cover letter is **not a CV repetition**. It should be forward-looking:
 
 ## Patterns Observed in Past Applications
 
-No submitted cover letters have been mined for recurring patterns yet - `/setup` populates this section from `documents/applications/<company>_<role>/cover_letter.tex` files once 2+ letters show a genuine structural pattern. Nothing to report until then.
+Mined from 4 submitted cover letters (Vestmark, Built, Glean, Notion) via `/setup` on 2026-07-13:
+
+- **Motivation paragraph formula:** All 4 letters open the "why this company" paragraph with the exact phrase **"What draws me to [Company] specifically is..."**. Treat this as the default opener for that paragraph rather than inventing a new transition each time.
+- **Default ambiguity/ownership proof point:** 3 of 4 letters (Vestmark, Built, Glean) reuse the Sansar cursor-disappearance bug, near-verbatim ("tracing a cursor-disappearance bug through an unfamiliar 90GB+ production codebase at Sansar took exactly that kind of open-ended investigation"), as the go-to example for "I can work through ambiguous problems without a detailed spec." It's a strong, real example - fine to keep reusing, but vary the wording per letter so it doesn't read as copy-pasted across applications from the candidate's side, and swap in a different proof point if a posting's ambiguity angle doesn't fit this bug well.
+- **Closing paragraph default:** 3 of 4 letters (Vestmark, Glean, Notion) close with the plain "I look forward to hearing from you." Built used a team-specific variant instead ("I would welcome the chance to talk through where I would start on the Implementations team.") when the posting named a specific team - use that variant when a team name is available and it reads naturally, otherwise default to the plain closer.
