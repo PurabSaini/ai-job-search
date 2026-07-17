@@ -70,7 +70,7 @@ Does this role advance career goals and contain tasks that energize?
 **Career goals:** Early-career Software Engineer / Full-Stack / Front-End / Back-End / Systems roles, full-time or internship, anywhere in the US (see `01-candidate-profile.md` Target Sectors) - no narrower specialization or specific company targets identified yet.
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: Building things that are technically solid and genuinely useful to people; full-stack range work that spans systems-level and UI-level tasks rather than narrow specialization (see `02-behavioral-profile.md`)
+- Tasks that energize: Building things that are technically solid and genuinely useful to people; full-stack range work that spans systems-level and UI-level tasks rather than narrow specialization (see `02-behavioral-profile.md`); building with or on top of AI/agentic tooling (Claude Code, agent frameworks) as a core part of the work, not just an occasional habit (confirmed 2026-07-13)
 - Tasks that drain: **Not yet gathered.** Don't infer a specific answer - ask Purab if a posting's day-to-day tasks are ambiguous enough to matter for the decision.
 - Non-task factors: leadership style, department culture, company values, degree of autonomy
 
