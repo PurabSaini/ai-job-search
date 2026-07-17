@@ -53,7 +53,7 @@ Does the role and company culture match the behavioral profile?
 ### 4. Location & Logistics (Pass/Fail + Notes)
 - Within commute range: PASS
 - Remote with occasional office: PASS
-- Requires relocation: FAIL (deal-breaker)
+- Requires relocation: PASS
 - Frequent international travel: FLAG (discuss with user)
 - **Requires an immediate, full-time on-site start:** FLAG (discuss with user) - Purab is starting an online MS in Computer Science at Georgia Tech (expected May 2028) and hasn't yet decided full-time vs. part-time course load. The program is online so it doesn't block full-time work by itself, but don't assume capacity - confirm his actual course-load plan before treating this as a clean PASS.
 
