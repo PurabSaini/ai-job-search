@@ -33,7 +33,7 @@ Remote
 - Delivered 30+ merged pull requests across a shared React/Next.js/Zustand codebase, resolving 10+ frontend bugs
 - Built UI integrations across the app, including AI-driven recommendation features surfacing clinical trial data to users
 - Engineered a multi-drug input and management workflow using TypeScript, expanding scope of clinical trial evaluation
-- Built an interactive ICD-10 disease hierarchy, improving navigation of AI-generated recommendations
+- Built an interactive ICD-10 disease hierarchy using Claude Code, improving navigation of AI-generated recommendations (confirmed 2026-07-21: Claude Code was used to build this panel itself, not just the separate UI/data-input refactor)
 - Refactored UI layout and data input flows for clinical trial use cases with Claude Code, reducing friction in core user workflows
 
 ### IT Intern - Peninsula Light Co. (Jun 2023 - Jul 2023)
